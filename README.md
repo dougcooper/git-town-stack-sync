@@ -4,11 +4,20 @@ An [OpenCode](https://opencode.ai) skill for maintaining, rebasing, and synchron
 
 ## Install
 
-Copy the skill into your OpenCode skills directory:
+Install with the skills CLI (installs for all detected agents, including OpenCode and Claude Code):
+
+```bash
+npx skills add dougcooper/git-town-stack-sync
+```
+
+By default the install is project-scoped when run inside a project, which produces a `skills-lock.json` you can commit and restore in CI with `skills experimental_install --frozen-lockfile`. Pass `-g` to install globally for all agents, or `-a <agent>` (for example `-a opencode`) to target a single agent.
+
+To copy the skill manually into your OpenCode skills directory instead:
 
 ```bash
 mkdir -p ~/.config/opencode/skills/git-town-stack-sync
-cp SKILL.md ~/.config/opencode/skills/git-town-stack-sync/SKILL.md
+curl -fsSL https://raw.githubusercontent.com/dougcooper/git-town-stack-sync/main/SKILL.md \
+  -o ~/.config/opencode/skills/git-town-stack-sync/SKILL.md
 ```
 
 ## What it covers
